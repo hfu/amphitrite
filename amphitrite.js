@@ -4,7 +4,7 @@ const Protobuf = require('pbf')
 const zlib = require('zlib')
 const params = {
   src: '/export/experimental_fgd.mbtiles', Z: 18,
-  z: 10, x: 881, y: 413
+  z: 10, x: 882, y: 410
 }
 
 const lut = {
@@ -14,13 +14,13 @@ const lut = {
   'Cntr': f => {
     return {
       layer: 'cntr', 
-      minzoom: f.properties.alti % 100 === 0 ? 10 : 
+      minzoom: f.properties.alti % 100 === 0 ? 12 : 
         (f.properties.alti % 50 === 0 ? 13 : 15),
       maxzoom: 16
     }
   },
   'RdEdg': f => {
-    return {layer: 'rdedg', minzoom: 14, maxzoom: 16}
+    return {layer: 'rdedg', minzoom: 13, maxzoom: 16}
   },
   'ElevPt': f => {
     return {layer: 'elevpt', minzoom: 15, maxzoom: 16}
@@ -32,7 +32,7 @@ const lut = {
     return {layer: 'gcp', minzoom: 16, maxzoom: 16}
   },
   'WL': f => {
-    return {layer: 'wl', minzoom: 14, maxzoom: 16}
+    return {layer: 'wl', minzoom: 13, maxzoom: 16}
   },
   'AdmPt': f => {
     return {layer: 'admpt', minzoom: 16, maxzoom: 16}
@@ -47,7 +47,7 @@ const lut = {
     return {layer: 'admbdry', minzoom: 13, maxzoom: 16}
   },
   'WStrL': f => {
-    return {layer: 'wstrl', minzoom: 14, maxzoom: 16}
+    return {layer: 'wstrl', minzoom: 13, maxzoom: 16}
   },
   'CommPt': f => {
     return {layer: 'commpt', minzoom: 15, maxzoom: 16}
